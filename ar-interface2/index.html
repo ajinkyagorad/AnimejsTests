@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Multiverse Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="ar-overlay">
+        <!-- Base Layer -->
+        <div class="top-bar">
+            <div class="datetime">
+                <div class="time">10:32</div>
+                <div class="date">Tue, Apr 23</div>
+            </div>
+            <div class="weather">
+                <div class="temp">72°</div>
+                <div class="condition">☀️</div>
+            </div>
+        </div>
+
+        <!-- Smart Assistant -->
+        <div class="assistant-bubble">
+            <div class="assistant-face">😊</div>
+            <div class="assistant-ring"></div>
+        </div>
+
+        <!-- Quick Access Menu -->
+        <div class="quick-menu">
+            <div class="menu-item" data-icon="📍">Maps</div>
+            <div class="menu-item" data-icon="💬">Messages</div>
+            <div class="menu-item" data-icon="🎵">Music</div>
+        </div>
+
+        <!-- Tasks & Calendar -->
+        <div class="task-calendar">
+            <div class="section-title">To-Do</div>
+            <div class="task-item">
+                <span class="check">✓</span>
+                <span class="task-text">Finish report</span>
+            </div>
+            <div class="section-title">Calendar</div>
+            <div class="calendar-item">
+                <div class="event-title">Physics class</div>
+                <div class="event-time">3:00 — 4:00</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-arrow">
+            <svg viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M12 2L2 12h5v10h10V12h5L12 2z"></path>
+            </svg>
+        </div>
+
+        <!-- Mode Switcher -->
+        <div class="mode-switcher">
+            <div class="mode-btn active" data-mode="daily">Daily</div>
+            <div class="mode-btn" data-mode="leisure">Leisure</div>
+            <div class="mode-btn" data-mode="science">Science</div>
+            <div class="mode-btn" data-mode="universe">Universe</div>
+        </div>
+    </div>
+
+    <script src="interface.js"></script>
+</body>
+</html>

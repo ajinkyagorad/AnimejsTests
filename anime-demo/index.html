@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime.js Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #111;
+            font-family: Arial, sans-serif;
+        }
+        .animation-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+        .el {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #FFF;
+            border-radius: 50%;
+        }
+        .staggering-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 30px);
+            gap: 10px;
+        }
+        .grid-item {
+            width: 30px;
+            height: 30px;
+            background-color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <div class="staggering-grid">
+            <!-- Grid items will be added by JavaScript -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

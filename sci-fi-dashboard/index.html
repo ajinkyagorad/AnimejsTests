@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Metrics Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="themes.js"></script>
+    <script src="particles.js"></script>
+    <script src="audio.js"></script>
+    <script src="notifications.js"></script>
+    <script src="weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <div class="time-display"></div>
+
+    <div class="floating-elements">
+        <!-- Audio Visualizer -->
+        <div class="floating-element" style="top: 40px; left: 40px;">
+            <canvas id="audio-canvas" width="200" height="60"></canvas>
+            <div class="element-label">AUDIO</div>
+        </div>
+
+        <!-- YouTube Player -->
+        <div class="floating-element youtube-container" style="top: 40px; right: 40px;">
+            <div id="youtube-player"></div>
+            <div class="youtube-info">
+                <div class="track-name">Loading...</div>
+                <div class="track-artist"></div>
+            </div>
+            <div class="element-label">MUSIC</div>
+        </div>
+        <!-- Connection Status -->
+        <div class="connection-status">
+            <div class="status-indicator"></div>
+            <span class="status-text">CONNECTED</span>
+        </div>
+
+        <!-- Audio Visualizer -->
+        <div class="floating-element" style="top: 40px; right: 50%;">
+            <canvas id="audio-canvas"></canvas>
+            <div class="element-label">AUDIO</div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="floating-element" style="top: 40px; left: 40px;">
+            <canvas id="activity-canvas"></canvas>
+            <canvas id="activity-particles" class="particle-overlay"></canvas>
+            <div class="activity-info">
+                <div class="activity-type"></div>
+                <div class="activity-duration"></div>
+            </div>
+            <div class="element-label">ACTIVITY</div>
+        </div>
+
+        <!-- Vitality Wheel -->
+        <div class="floating-element" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <canvas id="vitality-canvas"></canvas>
+            <div class="element-label">VITALITY</div>
+        </div>
+
+        <!-- Weather Display -->
+        <div class="floating-element" style="top: 40px; right: 40px;">
+            <div class="weather-info">
+                <div class="temp">--°C</div>
+                <div class="condition">...</div>
+                <div class="weather-details">
+                    <div class="detail">
+                        <span class="label">H:</span>
+                        <span class="value">--%</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">W:</span>
+                        <span class="value">-- m/s</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">P:</span>
+                        <span class="value">-- hPa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="element-label">WEATHER</div>
+        </div>
+
+        <!-- Mood Tracker -->
+        <div class="floating-element" style="bottom: 40px; left: 40px;">
+            <canvas id="mood-canvas"></canvas>
+            <div class="mood-info">
+                <div class="mood-value"></div>
+            </div>
+            <div class="element-label">MOOD</div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>

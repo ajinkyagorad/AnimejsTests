@@ -1,0 +1,12 @@
+{
+  "name": "sci-fi-ar-interface",
+  "version": "1.0.0",
+  "description": "A futuristic AR interface with real-time visualizations",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

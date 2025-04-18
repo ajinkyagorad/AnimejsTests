@@ -1,0 +1,197 @@
+:root {
+    --theme-red: rgba(255, 51, 51, 0.8);
+    --theme-blue: rgba(0, 170, 255, 0.8);
+    --theme-cyan: rgba(0, 255, 255, 0.8);
+    --theme-yellow: rgba(255, 255, 0, 0.8);
+    --glow: 0 0 10px;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --grid-color: rgba(0, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--theme-cyan);
+    font-family: var(--font-main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.interface-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 3fr minmax(200px, 1fr);
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.time-display {
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--theme-cyan);
+    text-shadow: var(--glow) var(--theme-cyan);
+    font-size: 1.4em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding: 5px;
+}
+
+.time-display::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--theme-cyan), transparent);
+    opacity: 0.1;
+}
+
+.vital-stats {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9em;
+}
+
+.stat {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.stat canvas {
+    position: relative;
+    z-index: 1;
+}
+
+.stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--theme-blue), transparent);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.center-area {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    background: black;
+}
+
+.youtube-container {
+    grid-column: 3;
+    grid-row: 1;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    max-height: 150px;
+}
+
+.audio-viz {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    min-height: 300px;
+    padding: 10px;
+}
+
+.audio-viz canvas {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    margin: 0;
+    aspect-ratio: 1;
+    max-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.audio-viz::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--theme-cyan) 0%, transparent 70%);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.map-container {
+    grid-column: 1;
+    grid-row: 3;
+    height: 120px;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.quantum-animation {
+    grid-column: 3;
+    grid-row: 3;
+    overflow: hidden;
+    min-height: 150px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Glowing effects */
+.stat h3 {
+    margin: 0 0 5px 0;
+    color: var(--theme-blue);
+    text-shadow: var(--glow) var(--theme-blue);
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.value {
+    font-size: 1.2em;
+    color: var(--theme-cyan);
+    text-shadow: var(--glow) var(--theme-cyan);
+    font-weight: 300;
+    margin-bottom: 3px;
+}

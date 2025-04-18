@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi AR Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div id="starfield"></div>
+    
+    <div class="interface-container">
+        <div class="time-display">
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+
+        <div class="vital-stats">
+            <div class="stat heart-rate">
+                <h3>HR</h3>
+                <div class="value"></div>
+                <canvas id="heartRateCanvas"></canvas>
+            </div>
+            <div class="stat respiratory-rate">
+                <h3>RR</h3>
+                <div class="value"></div>
+                <canvas id="respRateCanvas"></canvas>
+            </div>
+        </div>
+
+        <div class="center-area"></div>
+
+        <div class="youtube-container">
+            <iframe id="youtubePlayer" 
+                    src="https://www.youtube.com/embed/vZjTMzEZp2A?enablejsapi=1&controls=0&modestbranding=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+        </div>
+
+        <div class="audio-viz">
+            <canvas id="spectrogramCanvas"></canvas>
+            <canvas id="beatHistogramCanvas"></canvas>
+        </div>
+
+        <div class="map-container" id="map"></div>
+
+        <div class="quantum-animation">
+            <canvas id="quantumCanvas"></canvas>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="app.js"></script>
+</body>
+</html>

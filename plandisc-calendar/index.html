@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Plandisc Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="current-date">2025</div>
+            <div class="controls">
+                <button class="zoom-in">+</button>
+                <button class="zoom-out">-</button>
+            </div>
+        </div>
+        
+        <div class="plandisc">
+            <canvas id="calendar-disc"></canvas>
+            <div class="center-info">
+                <div class="current-time"></div>
+                <div class="selected-date"></div>
+            </div>
+        </div>
+
+        <div class="event-panel">
+            <div class="event-header">
+                <h2>Events</h2>
+                <button class="add-event">+</button>
+            </div>
+            <div class="event-list"></div>
+        </div>
+
+        <!-- Event Form Modal -->
+        <div class="modal" id="event-modal">
+            <div class="modal-content">
+                <h3>Add Event</h3>
+                <form id="event-form">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" name="time">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="category">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
